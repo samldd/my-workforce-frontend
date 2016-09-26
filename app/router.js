@@ -7,6 +7,20 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('welcome');
+
+  this.route('skills', function() {
+    this.route('skill', {path: ':id'}, function () {
+      this.route('timeline');
+    });
+  });
+
+  this.route('occupations', function() {
+    this.route('occupation', {path: ':id'}, function () {
+      this.route('bubble');
+    });
+  });
+
 });
 
 export default Router;
