@@ -1,0 +1,14 @@
+<h1> Occupations </h1>
+<p> following occupations are in the DB: </p>
+
+<ul>
+  {{#power-select options=model selected=select onchange=(action "onSelect") onkeydown=(action "handleKeydown") as |occupation|}}
+      {{occupation.name}}
+  {{/power-select}}
+</ul>
+
+<hr/>
+
+{{outlet}}
+
+<hr/>

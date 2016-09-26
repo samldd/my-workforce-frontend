@@ -1,0 +1,15 @@
+
+<h1> Skills </h1>
+<p> following skills are in the DB: </p>
+
+<ul>
+  {{#power-select options=model selected=select onchange=(action "onSelect") onkeydown=(action "handleKeydown") as |skill|}}
+      {{skill.name}}
+  {{/power-select}}
+</ul>
+
+<hr/>
+
+{{outlet}}
+
+<hr/>
