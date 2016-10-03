@@ -1,0 +1,24 @@
+<h1> Improvements </h1>
+
+
+<div class="float-right">
+
+<h2>employee improvements </h2>
+<p> This graphs shows the gained skills per employee in their active employment period.</p>
+{{bubble-graph data=employee}}
+
+{{#each model.employee as |m|}}
+  <li> {{m.name}}   {{m.count}}   - {{m.occupation}} </li>
+{{/each}}
+</div>
+
+<div class="float-left">
+<h2>skill improvements </h2>
+<p> This graphs shows the skills that are gained by the employees.</p>
+{{bubble-graph data=skill}}
+
+{{#each model.skill as |m|}}
+  <li> {{m.name}}   {{m.count}}  </li>
+{{/each}}
+</div>
+

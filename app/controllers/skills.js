@@ -20,9 +20,8 @@ export default Ember.Controller.extend({
           let text = e.target.value;
           let self = this;
           if (text.length > 0) {
-            this.get('store').all('skill', {name:text}).then( function(skills){
-            //this.get('store').query('skill', {'filter':text}).then(function(skills){
-              self.set('model',skills);
+              return this.get('store').query('skill', {filter:text}).then( function(skills){
+                return self.set('model',skills);
             });
           }
     },

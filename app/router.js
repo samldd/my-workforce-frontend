@@ -21,6 +21,13 @@ Router.map(function() {
     });
   });
 
+  this.route('improvements');
+
+  this.route('projects', function() {
+    this.route('edit', {path: '/edit/:pid'});
+  });
+
+  this.route('projectSkill');
 });
 
 export default Router;

@@ -20,14 +20,14 @@ html, body {
   background-color: #e7e7e7;
 }
 
-.songs .rating {
-  color: #aaa;
-  font-size: 1.1em;
-}
-
 .empty-list {
   min-height: 100px;
   text-align: center;
+}
+
+.text {
+  color: #aaa;
+  font: 10px sans-serif;
 }
 
 .empty-list .empty-message {
@@ -36,25 +36,12 @@ html, body {
   line-height: 100px;
 }
 
-.band-link .pointer {
+.float-left{
+ float: left
+}
+
+.float-right{
   float: right;
-  display: none;
-}
-
-.band-link.active .pointer {
-  display: block;
-}
-
-.new-band {
-  width: 82%;
-}
-.new-band-button {
-  float: right;
-  padding: 3px 10px;
-}
-
-.new-song {
-  width: 50%;
 }
 
 .new-song-button {
@@ -73,18 +60,4 @@ html, body {
 .axis-line {
 	fill: none;
 	stroke: gray;
-}
-
-.x-axis-tick {
-	text-anchor: middle;
-	alignment-baseline: hanging;
-	font-family: Consolas, monospaced;
-	font-size: 10px;
-}
-
-.y-axis-tick {
-	text-anchor: end;
-	alignment-baseline: middle;
-	font-family: Consolas, monospaced;
-	font-size: 10px;
 }
