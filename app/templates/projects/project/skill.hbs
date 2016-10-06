@@ -1,0 +1,7 @@
+
+<h3> Modify skill <small> {{model.skill.name}} </small> </h3>
+<p> Which person do you want to select for this project? </p>
+
+{{#power-select selected=model.employeeProject.employee options=empl onchange=(action "foo") as |emp|}}
+    {{emp.name}}
+  {{/power-select}}

@@ -1,0 +1,57 @@
+<!-- Modify the general project information -->
+
+<h2> Modify general information of <small> {{model.name}} </small> </h2>
+
+<form>
+
+  <div class="form-group">
+    <label> Project name </label>
+    {{input type="text" class="form-control" value=model.name}}
+  </div>
+
+  <div class="form-group">
+    <label> Start Date </label>
+    {{input type="date" class="datepicker" value=(formatDate model.start) }}
+  </div>
+
+  <div class="form-group">
+    <label> End Date </label>
+    {{input type="date" class="datepicker" value=(formatDate model.end) }}
+  </div>
+
+  <div class="form-group">
+    <label> Project description </label>
+    {{textarea rows="3" type="text" class="form-control" value=model.description}}
+  </div>
+
+  <button {{action 'addSkill' model.Pid}} class="btn btn-primary"> Modify </button>
+
+</form>
+
+<br>
+
+<!-- Add required skills to the project -->
+<h2> Add skills to <small> {{model.name}} </small> </h2>
+
+<form>
+
+  <div class="form-group">
+    <label> Required skill</label>
+    {{#power-select options=skills selected=select onchange=(action "onSelect") onkeydown=(action "handleKeydown") as |skill|}}
+        {{skill.name}}
+    {{/power-select}}
+  </div>
+
+  <div class="form-group">
+    <label> Required days </label>
+    {{input type="number" class="form-control" value=days}}
+  </div>
+
+  <button {{action 'addSkill' model.Sid}} class="btn btn-primary"> Add skill </button>
+
+</form>
+
+<br>
+
+
+{{outlet}}

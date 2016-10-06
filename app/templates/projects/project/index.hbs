@@ -1,0 +1,19 @@
+<!-- Show the already required skills for the project -->
+{{#each model.requiredSkills as |skill|}}
+
+  <div class="well">
+    <p>
+      <button {{action 'deleteSkill' skill.id}} class="btn btn-danger"> X </button>
+      &emsp; The skill <b> {{#link-to 'projects.project.skill' skill.id}} {{skill.skill.name }} {{/link-to}} </b> is required for <b> {{skill.requiredDays}} days </b>.
+      {{#if skill.employeeProject}}
+         will be carried out by {{skill.employeeProject.employee.name}} from {{formatDate skill.employeeProject.start}} till {{formatDate skill.employeeProject.end}}.
+      {{else}}
+         <small> This skill isn't allocated to an employee yet. </small>
+      {{/if}}
+    </p>
+  </div>
+{{else}}
+  No skills defined yet..
+{{/each}}
+
+<br>
