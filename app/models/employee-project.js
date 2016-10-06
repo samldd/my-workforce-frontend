@@ -8,8 +8,8 @@ export default DS.Model.extend({
 
   end: DS.attr('date'),
 
-  project: DS.hasMany('project'),
-
   projectSkill: DS.belongsTo('project-skill'),
+
+  employee: DS.belongsTo('employee'),
 
 });

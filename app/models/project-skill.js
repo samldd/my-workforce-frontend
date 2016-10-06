@@ -8,6 +8,6 @@ export default DS.Model.extend({
 
   project: DS.belongsTo('project'),
 
-  employee: DS.hasMany('project-skill'),
+  employeeProject: DS.belongsTo('employee-project'),
 
 });

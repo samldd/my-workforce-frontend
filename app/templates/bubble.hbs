@@ -1,1 +1,18 @@
-{{outlet}}
+
+<h1> time bubble </h1>
+
+<p> Choose a date to show the company status. </p>
+
+<form>
+  <div class="form-inline">
+
+    <div class="form-group">
+      <label> The Date </label>
+      {{input type="date" class="datepicker" value=theDate }}
+    </div>
+
+    <button {{action 'changeDate'}} class="btn btn-primary"> Show bubble </button>
+  </div>
+</form>
+
+{{bubble-graph data=(await data)}}

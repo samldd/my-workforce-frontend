@@ -8,6 +8,10 @@ export default Ember.Component.extend({
 	xAxisHeight: 30,
   data: null,
 
+  didInsertElement: function () {
+    this.draw();
+  },
+
   draw: function(){
     if (this.get('data') == null){
       return;
@@ -16,7 +20,10 @@ export default Ember.Component.extend({
 	  var height = this.get('height');
     var width = this.get('width');
 
-    d3.select("#timeline").remove();
+    try{
+      d3.select("#timeline").remove();
+    }catch(err){}
+
 
     var svg = d3.select("#graph").append("svg")
       .attr("id", "timeline")

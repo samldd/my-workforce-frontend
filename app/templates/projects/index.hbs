@@ -30,7 +30,7 @@
 
 {{#each model as |project|}}
   <div class="well">
-    <h4> {{#link-to 'projects.edit' project.id}} {{project.name}} {{/link-to}}</h4>
+    <h4> {{#link-to 'projects.project' project.id}} {{project.name}} {{/link-to}}</h4>
     <p> <b> From: </b> {{formatDate project.start}} <b> Until: </b> {{formatDate project.end}} </p>
     <p> <b> Short Description:</b> {{project.description}} </p>
     <button {{action 'deleteTask' project.id}} class="btn btn-danger">Delete</button>

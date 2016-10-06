@@ -8,12 +8,20 @@ export default Ember.Component.extend({
 	xAxisHeight: 30,
   data: null,
 
-  didInsertElement: function() {
+  didInsertElement: function () {
+    this.draw()
+  },
+
+  draw: function() {
     console.log("start");
 
     if (this.get('data') == null) {
       return;
     }
+
+    try{
+      d3.select("#" + this.get("elementId")).select("#bubble").remove();
+    }catch(err){}
 
     var height = this.get('height');
     var width = this.get('width');
@@ -33,6 +41,7 @@ export default Ember.Component.extend({
       .attr("height", diameter)
       .attr("class", "bubble");
 
+    //debugger;
     var data = this.get('data');
 
     var node = svg.selectAll(".node")
@@ -51,8 +60,13 @@ export default Ember.Component.extend({
       .attr("text-anchor", "middle")
       .text(function(d) { return d.className.substring(0, d.r / 3); });
 
+    node.append("text")
+      .attr("dy", "1.5em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d.value.toString(); });
+
     console.log("executed");
-  },
+  }.observes('data.[]').on('init'),
 
 
 

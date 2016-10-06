@@ -15,19 +15,15 @@ Router.map(function() {
     });
   });
 
-  this.route('occupations', function() {
-    this.route('occupation', {path: ':id'}, function () {
-      this.route('bubble');
-    });
-  });
-
   this.route('improvements');
 
   this.route('projects', function() {
-    this.route('edit', {path: '/edit/:pid'});
+    this.route('project', {path: ':Pid'}, function(){
+      this.route('skill', {path: 'skill/:Sid'});
+    });
   });
 
-  this.route('projectSkill');
+  this.route('bubble')
 });
 
 export default Router;
