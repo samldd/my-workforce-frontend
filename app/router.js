@@ -24,6 +24,8 @@ Router.map(function() {
   });
 
   this.route('bubble');
+
+  this.route('generate');
 });
 
 export default Router;
