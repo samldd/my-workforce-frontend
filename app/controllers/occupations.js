@@ -9,14 +9,12 @@ export default Ember.Controller.extend({
   actions: {
 
     onSelect (theOcc){
-      console.log("controller/occupations.js - onSelect");
       this.set('select', theOcc);
       this.transitionToRoute('occupations.occupation.bubble', theOcc.get('id'));
     },
 
     handleKeydown(dropdown, e) {
           if (e.keyCode !== 13) { return; }
-          console.log("controller/occupations.js - handleKeydown");
           let text = e.target.value;
           let self = this;
           if (text.length > 0) {

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -8,4 +9,5 @@ export default DS.Model.extend({
     console.log("models/occupations.js - slug");
     return this.get('name').dasherize();
   }),
+
 });

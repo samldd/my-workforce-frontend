@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   data: null,
 
   didInsertElement: function () {
-    this.draw()
+    this.draw();
   },
 
   draw: function() {
@@ -23,11 +23,7 @@ export default Ember.Component.extend({
       d3.select("#" + this.get("elementId")).select("#bubble").remove();
     }catch(err){}
 
-    var height = this.get('height');
-    var width = this.get('width');
-
     var diameter = 500,
-        format = d3.format(",d"),
         color = d3.scale.category20c();
 
     var bubble = d3.layout.pack()

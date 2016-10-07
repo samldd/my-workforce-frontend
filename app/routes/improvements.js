@@ -5,8 +5,7 @@ export default Ember.Route.extend({
 
   store: Ember.inject.service(),
 
-  model: function (params) {
-    console.log(  "routes/improvements.js - model");
+  model: function () {
     return this.get('ajax').request('/improvements/').then(
         (res) => {
           this.get('store').pushPayload(res);

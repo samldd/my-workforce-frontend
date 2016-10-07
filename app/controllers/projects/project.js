@@ -60,7 +60,7 @@ export default Ember.Controller.extend({
                     return result;
                   });
 
-                self.set("skills", skills)
+                self.set("skills", skills);
 
                 }
             );

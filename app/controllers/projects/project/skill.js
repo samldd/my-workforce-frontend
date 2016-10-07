@@ -43,6 +43,8 @@ export default Ember.Controller.extend({
       });
 
       newEmp.save();
+
+      this.transitionToRoute("projects.project");
     }
   }
 

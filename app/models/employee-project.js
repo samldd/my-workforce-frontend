@@ -1,6 +1,4 @@
-/**
- * Created by sam on 03.10.16.
- */
+import DS from 'ember-data';
 
 export default DS.Model.extend({
 

@@ -8,8 +8,7 @@ export default Ember.Route.extend({
 
   store: Ember.inject.service(),
 
-  model: function (params) {
-    console.log(  "routes/skills/skill/timeline.js - model");
+  model: function () {
     return this.get('ajax').request('/timeline/', {data: {skillid: this.modelFor('skills.skill').get('id')}}).then(
         (res) => {
           this.get('store').pushPayload(res);

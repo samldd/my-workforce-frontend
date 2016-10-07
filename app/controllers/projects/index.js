@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
         name: '',
         start: '',
         end:'',
-      })
+      });
     },
 
     deleteTask: function(id){

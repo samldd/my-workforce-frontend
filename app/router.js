@@ -23,7 +23,7 @@ Router.map(function() {
     });
   });
 
-  this.route('bubble')
+  this.route('bubble');
 });
 
 export default Router;

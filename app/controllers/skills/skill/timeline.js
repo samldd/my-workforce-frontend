@@ -9,10 +9,10 @@ export default Ember.Controller.extend({
     console.log('new data');
     var measurements = this.get('model.measurements');
     var data = [];
-    if (measurements == undefined){
+    if (measurements === undefined){
       return data;
     }
-    measurements.forEach(function(m,i){
+    measurements.forEach(function(m){
       data.push({x:m.get('date'), y:m.get('value')});
     });
     return data;
